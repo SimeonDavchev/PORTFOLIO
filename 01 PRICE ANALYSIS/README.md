@@ -1,4 +1,4 @@
-# Price-comparison-HSN# PROJECT 1: Price comparison HSN
+PROJECT 1: Price Analysis
 
 **Confidentiality NOTE:** Prices are publicly available, however in order to not to share confidential information items will be renamed, brand names and invoices are kept under .gitignore, and some functions are left as comments in order not to expose information with outputs. 
 
