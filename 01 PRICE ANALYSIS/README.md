@@ -21,11 +21,11 @@ Future NOTE: Use RegEx next time.
 
 4. **Analysis and visualisation**: the owners were interested in 2 questions:
 
-   4.1 How much has the total price or the invoices risen?
+   4.1 Which items have increased the most in price?
 
-   4.2 Which items have increased the most in price?
+   4.2 How much has the total price of the invoices risen?
 
-   (4.3) I allowed myself however to include a third question: Which items' price increase has contributed the most to the specific orders of the hotel? Here in order to compare how different items affect the total increase, I defined their impact as the quantity ordered times the price increase at the time)
+   (4.3) I allowed myself however to include a third question: Which items' price increase has contributed the most to the specific orders of the hotel? Here in order to compare how different items affect the total increase, I defined their impact as the quantity ordered times the price increase at the time). 
 
 A really interesting problem that was discovered in this step was that there were 
 invoices which had much lower prices than the rest, which was altering the analysis. Later it was discovered that it is due to the fact that there is a separate type of orders, that were in the invoices and there was no way to tell them appart besides with the magnitude of the price, so both visual inspection and k-means clustering was used to separate them out.
@@ -33,6 +33,16 @@ invoices which had much lower prices than the rest, which was altering the analy
 
 **PART II: RESULTS AND INTERPRETATION**
 
+For this summary I will only discuss Questions 2 and 3, as I think 1 is irrelevant. Also because q3 is a much better question to begin with it has a much better insight.
 
+**Question 2:** Has the invoice amount increased?
+![image](https://github.com/SimeonDavchev/PROJECT-1-Price-comparison-HSN/assets/113254668/12a05fdd-898b-4a2c-bfba-ec47eba60409)
 
+In the code, I explain my reasoning in depth, but long-story-short there are two types of invoices and there is no way to separate them besides price, so if you perform K-means clustering. As the green is the one we are interested in we can focus on it and we see that pn average the bill has increased ~100EUR per order.
 
+**Question 3:** What are the items with most impact?
+![image](https://github.com/SimeonDavchev/PROJECT-1-Price-comparison-HSN/assets/113254668/e9609a1a-6b17-408f-92e4-0485ca4bede6)
+
+We see why this is a much more appropriate question to ask. Item009 was in 11th place when measuring the change in price, however once we weigh it by how much it was ordered (and when the prices were raised) we see that it account for almost 1/5 of the total difference in what has been paid over the last year. Same holds for other positions like 018 but not nearly as impressive. 
+
+One more important insight is that 9,18 and 13 taken together account for almost half of total price increase. This means that if we focus on just these 3 items we can achieve the most significant effect.
