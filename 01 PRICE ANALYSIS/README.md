@@ -36,12 +36,14 @@ invoices which had much lower prices than the rest, which was altering the analy
 For this summary I will only discuss Questions 2 and 3, as I think 1 is irrelevant. Also because q3 is a much better question to begin with it has a much better insight.
 
 **Question 2:** Has the invoice amount increased?
-![image](https://github.com/SimeonDavchev/PROJECT-1-Price-comparison-HSN/assets/113254668/12a05fdd-898b-4a2c-bfba-ec47eba60409)
+![image](https://github.com/SimeonDavchev/PORTFOLIO/assets/113254668/13198a3d-5bb8-435a-8c48-a8897e6d9a5d)
+
 
 In the code, I explain my reasoning in depth, but long-story-short there are two types of invoices and there is no way to separate them besides price, so if you perform K-means clustering. As the green is the one we are interested in we can focus on it and we see that pn average the bill has increased ~100EUR per order.
 
 **Question 3:** What are the items with most impact?
-![image](https://github.com/SimeonDavchev/PROJECT-1-Price-comparison-HSN/assets/113254668/e9609a1a-6b17-408f-92e4-0485ca4bede6)
+![image](https://github.com/SimeonDavchev/PORTFOLIO/assets/113254668/dd5c0190-6a09-42ac-8dea-a0a4fb1c46ce)
+
 
 We see why this is a much more appropriate question to ask. Item009 was in 11th place when measuring the change in price, however once we weigh it by how much it was ordered (and when the prices were raised) we see that it account for almost 1/5 of the total difference in what has been paid over the last year. Same holds for other positions like 018 but not nearly as impressive. 
 
