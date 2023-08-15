@@ -42,7 +42,7 @@ For this summary I will only discuss Questions 2 and 3, as I think 1 is irreleva
 In the code, I explain my reasoning in depth, but long-story-short there are two types of invoices and there is no way to separate them besides price, so if you perform K-means clustering. As the green is the one we are interested in we can focus on it and we see that pn average the bill has increased ~100EUR per order.
 
 **Question 3:** What are the items with most impact?
-![image](https://github.com/SimeonDavchev/PORTFOLIO/assets/113254668/dd5c0190-6a09-42ac-8dea-a0a4fb1c46ce)
+![image](https://github.com/SimeonDavchev/PORTFOLIO/assets/113254668/de5ee2e7-44bb-49d8-b25c-64ae7830b5c5)
 
 
 We see why this is a much more appropriate question to ask. Item009 was in 11th place when measuring the change in price, however once we weigh it by how much it was ordered (and when the prices were raised) we see that it account for almost 1/5 of the total difference in what has been paid over the last year. Same holds for other positions like 018 but not nearly as impressive. 
