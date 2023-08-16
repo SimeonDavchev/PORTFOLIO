@@ -23,7 +23,7 @@ Each project folder contains its README which offers a detailed overview, method
 
 4. ### **Option Pricing on HIMYM**:
     - (to be released)
-    - **Description** (to be released): A fun project that leverages the Black-Scholes model to price options based on words per minute from the "How I Met Your Mother" TV series.
+    - **Description**: A fun project that leverages the Black-Scholes model to price options based on words per minute from the "How I Met Your Mother" TV series.
     - **Highlights**: Integration of finance and pop culture, Black-Scholes model application, and data visualization.
     
 
