@@ -1,50 +1,48 @@
-## PROJECT 1: Price Analysis
 
-**Confidentiality NOTE:** Prices are publicly available, however in order to not to share confidential information items will be renamed, brand names and invoices are kept under .gitignore, and some functions are left as comments in order not to expose information with outputs. 
+# PROJECT 1: Price Analysis
 
+This project aims to provide a comprehensive analysis and visualization of price changes for a supplier's items over time. It's a practical solution to a real-world challenge, offering insights that can be instrumental for business decisions.
 
-**PART I: SUMMARY OF PROCESS AND METHODS USED**
+## Confidentiality NOTE:
+Prices are publicly available. However, to ensure confidentiality:
+- Items are renamed.
+- Brand names and invoices are kept under `.gitignore`, which itself was hidden.
+- Some functions are commented out to prevent exposing sensitive outputs.
 
-This project originated from my manager asking for help when trying to compare 
-the prices of one of our suppliers. The idea of the programme is to provide analysis 
-and visualisation of how prices have changed. 
+## PART I: SUMMARY OF PROCESS AND METHODS USED
 
-The code consists of 4 main parts:
+The project was inspired by a request from my manager to compare the prices of one of our suppliers. The code has four main components:
 
-1. **Sourcing the files**: the public version just uses files from a folder as most of the receipts were already sorted in a folder.
-Future NOTE: If this was not the case, it can be done by scrapping the email with the win32.client library.
+1. **Sourcing the files**: For this public version, files are sourced from a folder where most receipts were already organized.
+   - *Future NOTE*: Email scraping can be done using the `win32.client` library if necessary.
+2. **Extracting data from invoices**: The primary challenge was extracting data from inconsistently formatted PDF invoices. Reliable extraction was achieved by identifying patterns in brand name placements and units.
+   - *Future NOTE*: Consider using RegEx for improved extraction.
+3. **Filtering the data**: Invoices without prices were filtered out. The extraction function was refined for specific formatting corner cases.
+4. **Analysis and visualization**: The primary questions addressed were:
+   - 1: Which items have seen the most significant price increase?
+   - 2: How has the total invoice price changed over time?
+   - (3): An additional analysis was conducted to determine the items whose price increase had the most impact on specific hotel orders.
 
-2. **Extracting the data from invoices**: this proved to be by far the most challenging part as the only way in which the information was available was .pdf and formatting, order and spacing were inconsistent, however some patterns in brand name placement and units were used to extract information reliably. Adaptation for some categories was needed as interpretation of price was different depending on the item and unit used.
-Future NOTE: Use RegEx next time.
+During the analysis, it was observed that some invoices had significantly lower prices. It was determined that these belonged to a different order type, distinguishable only by price. Both visual inspection and K-means clustering were used to segregate them.
 
-3. **Filtering the data**: part of this was imbedded in the information extraction function as some of the invoices were send without prices. This step also lead to modifications of the exraction function, to help with corner cases of formatting.
+## PART II: RESULTS AND INTERPRETATION
 
-4. **Analysis and visualisation**: the owners were interested in 2 questions:
+The focus here is on the latter two questions as they provide the most actionable insights:
 
-   4.1 Which items have increased the most in price?
+**Question 2**: Has the invoice amount increased?
+![Invoice Increase Analysis](https://github.com/SimeonDavchev/PORTFOLIO/assets/113254668/13198a3d-5bb8-435a-8c48-a8897e6d9a5d)
 
-   4.2 How much has the total price of the invoices risen?
+The analysis, detailed in the code, revealed two types of invoices. K-means clustering helped segregate them. The green cluster, which was the focus, shows that on average, the bill has risen by ~100EUR per order.
 
-   (4.3) I allowed myself however to include a third question: Which items' price increase has contributed the most to the specific orders of the hotel? Here in order to compare how different items affect the total increase, I defined their impact as the quantity ordered times the price increase at the time). 
+**Question 3**: Which items have had the most impact on price changes?
 
-A really interesting problem that was discovered in this step was that there were 
-invoices which had much lower prices than the rest, which was altering the analysis. Later it was discovered that it is due to the fact that there is a separate type of orders, that were in the invoices and there was no way to tell them appart besides with the magnitude of the price, so both visual inspection and k-means clustering was used to separate them out.
+Arguably there are many ways to do this, but the way I did it is to multiply the changes in price per the quantity ordered as they occur and call this the 'impact' (i.e. if eggs increased with 1 EUR by 6 June but 10 EUR by today, the values before 6 June will be multiplied by 1 not 10)
+and then do a ordered bar chart to visualise it.
 
+![Items Impact Analysis](https://github.com/SimeonDavchev/PORTFOLIO/assets/113254668/de5ee2e7-44bb-49d8-b25c-64ae7830b5c5)
 
-**PART II: RESULTS AND INTERPRETATION**
+Item009 stands out. While it ranked 11th in price change, its overall impact, when weighted by order quantity, accounted for almost 1/5 of the total price difference over the year. Other notable items include 018 and 013. Focusing on these three items could yield significant cost-saving effects.
 
-For this summary I will only discuss Questions 2 and 3, as I think 1 is irrelevant. Also because q3 is a much better question to begin with it has a much better insight.
+## Conclusion and Future Work
+The project successfully provides insights into price changes and their impacts. By focusing on a few key items, businesses can make informed decisions to achieve substantial savings. For future iterations, refining data extraction techniques and expanding the dataset could provide even deeper insights.
 
-**Question 2:** Has the invoice amount increased?
-![image](https://github.com/SimeonDavchev/PORTFOLIO/assets/113254668/13198a3d-5bb8-435a-8c48-a8897e6d9a5d)
-
-
-In the code, I explain my reasoning in depth, but long-story-short there are two types of invoices and there is no way to separate them besides price, so if you perform K-means clustering. As the green is the one we are interested in we can focus on it and we see that pn average the bill has increased ~100EUR per order.
-
-**Question 3:** What are the items with most impact?
-![image](https://github.com/SimeonDavchev/PORTFOLIO/assets/113254668/de5ee2e7-44bb-49d8-b25c-64ae7830b5c5)
-
-
-We see why this is a much more appropriate question to ask. Item009 was in 11th place when measuring the change in price, however once we weigh it by how much it was ordered (and when the prices were raised) we see that it account for almost 1/5 of the total difference in what has been paid over the last year. Same holds for other positions like 018 but not nearly as impressive. 
-
-One more important insight is that 9,18 and 13 taken together account for almost half of total price increase. This means that if we focus on just these 3 items we can achieve the most significant effect.
