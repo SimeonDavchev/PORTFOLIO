@@ -11,8 +11,8 @@ Each project folder contains its README which offers a detailed overview, method
 
 2. ### **Reservation Check Automation** : 
     - (to be released)
-    - **Description**: An automated system to check and manage reservations.
-    - **Highlights**: Automation scripts, reservation management and scheduling.
+    - **Description**: An automated system to check for discrepancies between reservations on different platforms.
+    - **Highlights**: Used APIs to source data, data manipulation with pandas.
 
 
 3. ### **Efficient Frontier Autotrader Bot**:
