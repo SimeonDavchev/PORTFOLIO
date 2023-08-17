@@ -14,10 +14,9 @@ Each project folder contains its README which offers a detailed overview, method
     - **Highlights**: Used APIs to source data, data manipulation with pandas.
 
 
-3. ### **Efficient Frontier Autotrader Bot**:
-    - (to be released)
-    - **Description**: An automated trading bot that uses the concept of the efficient frontier to optimise a portfolio.
-    - **Highlights**: Application of financial concepts, trading automation and risk optimisation.
+3. ### **Efficient Frontier Assistant**:
+    - **Description**: is a tool designed to assist users in optimising their investment portfolio by combining one optimised Sharpe ratio and a risk-free asset. 
+    - **Highlights**: Application of financial concepts, data manipulation and life data sourcing.
 
 
 4. ### **Option Pricing on HIMYM**:
