@@ -32,3 +32,7 @@ This Jupyter notebook assists users in optimizing their investment portfolio by 
 
 #### **Disclaimer**: 
 This notebook is developed for academic and project purposes only. It is not intended to provide, and should not be relied upon for, investment advice, recommendations, or endorsements. Investing in financial markets involves risks, and you should always consult with a professional financial advisor before making any investment decisions. 
+
+#### **Sources and Inspiration:**
+- Berk, J. and DeMarzo, P. (2019). Corporate Finance. Pearson, 5th Global Edition, Chapter 11 Optimal Portfolio Choice and the Capital Asset Pricing Model
+- QuntPy: Portfolio Optimisation. https://quantpy.com.au/python-for-finance/portfolio-optimisation/
