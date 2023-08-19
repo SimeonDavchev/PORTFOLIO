@@ -24,6 +24,7 @@ This project aims to analyze the words per minute (WPM) from subtitle files of t
 
 ### Part IV: Option Pricing
 - Option pricing using the Black-Scholes model based on the modeled WPM data.
+- Calculations for Delta and Gamma added.
 - Interpretation of episodes as trading days.
 
 ## Final Thoughts
