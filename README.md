@@ -19,7 +19,7 @@ Each project folder contains its README which offers a detailed overview, method
     - **Highlights**: Application of financial concepts, data manipulation and life data sourcing.
 
 
-4. ### **Option Pricing Analysis (HIMYM WPM)**:
+4. ### **Option Pricing (HIMYM WPM)**:
     - **Description**: A distinctive project that blends data from the TV show "How I Met Your Mother" with financial modeling, analyzing the words per minute (WPM) from subtitle files for option pricing.
     - **Highlights**: Analysis of subtitles for trend visualization, time series modeling with ARIMA, polynomial regression, and application of the Black-Scholes model for option pricing.
 
